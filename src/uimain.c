@@ -1,26 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #include "tokenizer.h"
-#include "history.h"
 
-int main()
-{
+int main(){
   puts("*** Welcome to Tokenizer ***");
 
-  while(1) {
-    fputs("Enter a sentence, 'h' to check history or 'q' to quit");
+  while(1){
+    fputs("Enter 's' to enter a sentence or 'q' to quit\n> ", stdout);
+    fflush(stdout);
+    int c = getchar;
+    getchar();
 
-    int c;
-    while ((c = getchar()) == '\n');
-    if (c == EOF)
-      goto done;
-    if(c == 'h'){
+    switch(c){
+      case 's':
+	fputs("Enter your string: ", stdout);
+	fflush(stdout);
+	char sentence[100];
+	break;
 
+      case 'q':
+	puts("Thanks for using Tokenizer");
+	break;
     }
-    else if (c == 'q'){
-      puts("See you again");
-      goto done;
+    if (c == 'q'){
+      break;
     }
-
-  done:
+  }
   return 0;
-}
+}	    
+		      
+		  
