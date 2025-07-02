@@ -5,11 +5,10 @@ CFLAGS=-g -O3
 all: tokenizer
 
 # Include file dependencies
-history.o: history.h
 tokenizer.o: tokenizer.h
 
 # Build tokenizer executable
-tokenizer: history.o tokenizer.o uimain.o
+tokenizer: tokenizer.o uimain.o
 	cc -o $@ $^ $(CFLAGS)
 
 # Compile uimain.c
